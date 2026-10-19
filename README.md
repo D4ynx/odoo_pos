@@ -1,18 +1,17 @@
 # Restaurant POS for Odoo 18
 
 A restaurant point-of-sale module for **Odoo 18 Community**. Orders flow from the table to the kitchen to
-payment. At payment, ingredients are deducted from inventory using each dish's recipe, and the cost of goods
-sold (COGS) is calculated **FIFO** from what those ingredients actually cost when they were bought.
+payment. At payment, ingredients are deducted from inventory using each dish's recipe, and the cost of goods sold (COGS) is calculated **FIFO** from what those ingredients actually cost when they were bought.
 
 > 🚧 Work in progress, built milestone by milestone. See the [roadmap](#roadmap).
 
 ## Features
-- 🍽️ **Tables & floor**: open an order on a table, which shows as occupied until the order is paid
-- 👨‍🍳 **Kitchen workflow**: `draft → kitchen → served → paid`
-- 📖 **Recipe masterlist**: each dish lists its ingredients and quantities
-- 🛒 **Ingredient purchases**: every purchase adds stock at its own unit cost
-- 📦 **FIFO inventory**: the oldest stock is consumed first, with automatic unit conversion (g ↔ kg, mL ↔ L)
-- 💰 **COGS & margin**: real cost per order, plus a margin report per dish and per day
+- **Tables & floor**: open an order on a table, which shows as occupied until the order is paid
+- **Kitchen workflow**: `draft → kitchen → served → paid`
+- **Recipe masterlist**: each dish lists its ingredients and quantities
+- **Ingredient purchases**: every purchase adds stock at its own unit cost
+- **FIFO inventory**: the oldest stock is consumed first, with automatic unit conversion (g ↔ kg, mL ↔ L)
+- **COGS & margin**: real cost per order, plus a margin report per dish and per day
 
 ## How it works
 1. Ingredients are purchased, and each purchase line becomes a **stock lot** with its own unit cost.
