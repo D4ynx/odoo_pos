@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="resto_ingredient_view_list" model="ir.ui.view">
+        <field name="name">resto.ingredient.view.list</field>
+        <field name="model">resto.ingredient</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="uom_id"/>
+                <field name="min_qty"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+</odoo>
