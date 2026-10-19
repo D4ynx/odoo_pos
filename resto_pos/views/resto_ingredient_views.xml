@@ -8,8 +8,23 @@
                 <field name="name"/>
                 <field name="uom_id"/>
                 <field name="min_qty"/>
-                <field name="active"/>
             </list>
+        </field>
+    </record>
+
+    <record id="resto_ingredient_view_form" model="ir.ui.view">
+        <field name="name">resto.ingredient.view.form</field>
+        <field name="model">resto.ingredient</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="uom_id"/>
+                        <field name="min_qty"/>
+                    </group>
+                </sheet>
+            </form>
         </field>
     </record>
 </odoo>
