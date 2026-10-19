@@ -1,0 +1,2 @@
+[lint.per-file-ignores]
+"__manifest__.py" = ["B018"]
