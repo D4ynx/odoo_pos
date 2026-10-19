@@ -25,6 +25,13 @@
                         <field name="price"/>
                         <!-- add category here in the future-->
                     </group>
+                    <field name = "recipe_line_ids">
+                        <list editable="bottom">
+                            <field name="ingredient_id"/>
+                            <field name="qty"/>
+                            <field name="uom_id"/>
+                        </list>
+                    </field>
                 </sheet>
             </form>
         </field>
