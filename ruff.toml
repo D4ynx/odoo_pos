@@ -1,0 +1,3 @@
+[lint.per-file-ignores]
+"__manifest__.py" = ["B018"]
+"__init__.py" = ["F401"]

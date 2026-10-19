@@ -42,8 +42,8 @@ git clone git@github.com:D4ynx/odoo_pos.git custom_addons
 ```
 
 ## Roadmap
-- [ ] **M0** Repo setup, tooling, README
-- [ ] **M1** Ingredients with units of measure
+- [x] **M0** Repo setup, tooling, README
+- [x] **M1** Ingredients with units of measure
 - [ ] **M2** Menu items and recipes
 - [ ] **M3** Purchases, stock lots, FIFO (with tests)
 - [ ] **M4** Tables, orders, kitchen workflow, COGS at payment
