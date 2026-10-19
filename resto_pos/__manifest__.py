@@ -6,7 +6,9 @@
     "author": "Ricofel Guinanao",
     "license": "LGPL-3",
     "depends": ["base", "uom"],
-    "data": [],
+    "data": [
+        "security/ir.model.access.csv",
+    ],
     "application": True,
     "installable": True,
 }
