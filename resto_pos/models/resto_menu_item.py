@@ -15,3 +15,9 @@ class RestoMenuItem(models.Model):
     )
     price = fields.Monetary(string="Price", currency_field="currency_id", required=True)
     active = fields.Boolean(string="Active", default=True)
+
+    recipe_line_ids = fields.One2many(
+        "resto.recipe.line",
+        "menu_item_id",
+        string="Recipe",
+    )
