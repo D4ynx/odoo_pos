@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import fields
+from odoo import models
 
 
 class RestoMenuItem(models.Model):
@@ -14,6 +15,12 @@ class RestoMenuItem(models.Model):
         default=lambda self: self.env.company.currency_id,
     )
     price = fields.Monetary(string="Price", currency_field="currency_id", required=True)
+
+    category_ids = fields.Many2many(
+        "resto.menu.category",
+        string="Menu Categories",
+    )
+
     active = fields.Boolean(string="Active", default=True)
 
     recipe_line_ids = fields.One2many(
