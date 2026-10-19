@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ACTION: "open the ingredient cards in a list, click one to see its form"-->
+    <record id="resto_ingredient_action" model="ir.actions.act_window">
+        <field name="name">Ingredients</field>
+        <field name="res_model">resto.ingredient</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- MENUITEM: "top-level app, then a sub-item that runs the action"-->
+    <menuitem id="resto_menu_root" name="Resto POS"/>
+    <menuitem id="resto_menu_ingredients"
+        name="Ingredients"
+        parent="resto_menu_root"
+        action="resto_ingredient_action"/>
+</odoo>

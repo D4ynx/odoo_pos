@@ -8,6 +8,7 @@
     "depends": ["base", "uom"],
     "data": [
         "security/ir.model.access.csv",
+        "views/resto_menus.xml",
     ],
     "application": True,
     "installable": True,
