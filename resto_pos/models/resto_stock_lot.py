@@ -5,6 +5,23 @@ class RestoStockLot(models.Model):
     _name = "resto.stock.lot"
     _description = "Resto Stock Lot"
     _order = "date, id"
+    _sql_constraints = [
+        (
+            "qty_positive",
+            "CHECK(qty > 0)",
+            "Starting quantity must be more than zero.",
+        ),
+        (
+            "remaining_not_negative",
+            "CHECK(remaining_qty >= 0)",
+            "Remaining quantity can't be a negative value.",
+        ),
+        (
+            "remaining_max_qty",
+            "CHECK(remaining_qty <= qty)",
+            "Remaining quantity can't be more than the starting quantity.",
+        ),
+    ]
 
     ingredient_id = fields.Many2one(
         "resto.ingredient",
