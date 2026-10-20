@@ -14,7 +14,7 @@ class RestoStockLot(models.Model):
     )
 
     date = fields.Date(string="Date", required=True, default=fields.Date.context_today)
-    qty = fields.Float(string="Quantity", required=True)
+    qty = fields.Float(string="Starting Quantity", required=True)
     remaining_qty = fields.Float(string="Remaining Quantity", required=True)
 
     currency_id = fields.Many2one(
