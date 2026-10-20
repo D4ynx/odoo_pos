@@ -2,3 +2,4 @@ from . import resto_ingredient
 from . import resto_menu_category
 from . import resto_menu_item
 from . import resto_recipe_line
+from . import resto_stock_lot
