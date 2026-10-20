@@ -4,3 +4,4 @@
 
 [lint.isort]
 force-single-line = true
+single-line-exclusions = ["odoo"]
