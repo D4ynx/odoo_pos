@@ -26,3 +26,8 @@ class RestoStockLot(models.Model):
     unit_cost = fields.Monetary(
         string="Unit Cost", currency_field="currency_id", required=True
     )
+
+    uom_id = fields.Many2one(
+        related="ingredient_id.uom_id",
+        string="Unit",
+    )

@@ -10,6 +10,7 @@
         "security/ir.model.access.csv",
         "views/resto_ingredient_views.xml",
         "views/resto_menu_item_views.xml",
+        "views/resto_stock_lot_views.xml",
         "views/resto_menus.xml",
     ],
     "application": True,

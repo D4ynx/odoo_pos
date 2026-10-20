@@ -13,9 +13,15 @@
         <field name="view_mode">list,form</field>
     </record>
 
+    <record id="resto_stock_lot_action" model="ir.actions.act_window">
+        <field name="name">Stock Lots</field>
+        <field name="res_model">resto.stock.lot</field>
+        <field name="view_mode">list</field>
+    </record>
+
     <!-- MENUITEM: "top-level app, then a sub-item that runs the action"-->
     <menuitem id="resto_menu_root" name="Resto POS"/>
-        <menuitem id="resto_menu_items"
+    <menuitem id="resto_menu_items"
             name="Menu Items"
             parent="resto_menu_root"
             action="resto_menu_item_action"/>
@@ -23,4 +29,8 @@
             name="Ingredients"
             parent="resto_menu_root"
             action="resto_ingredient_action"/>
+    <menuitem id="resto_menu_stock_lots"
+            name="Stock Lots"
+            parent="resto_menu_root"
+            action="resto_stock_lot_action"/>
 </odoo>
