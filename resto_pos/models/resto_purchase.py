@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import _, fields, models
+from odoo.exceptions import UserError
 
 
 class RestoPurchase(models.Model):
@@ -43,6 +44,8 @@ class RestoPurchase(models.Model):
 
     def action_confirm(self):
         for purchase in self:
+            if purchase.state != "draft":
+                raise UserError(_("Only draft purchases can be confirmed."))
             for line in purchase.line_ids:
                 self.env["resto.stock.lot"].create(
                     {
