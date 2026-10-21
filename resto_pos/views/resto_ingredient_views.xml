@@ -4,7 +4,7 @@
         <field name="name">resto.ingredient.view.list</field>
         <field name="model">resto.ingredient</field>
         <field name="arch" type="xml">
-            <list>
+            <list decoration-danger="min_qty > qty_on_hand">
                 <field name="name"/>
                 <field name="uom_id"/>
                 <field name="qty_on_hand"/>
