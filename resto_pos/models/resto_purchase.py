@@ -23,3 +23,10 @@ class RestoPurchase(models.Model):
         "purchase_id",
         string="Purchase Lines",
     )
+
+    currency_id = fields.Many2one(
+        "res.currency",
+        string="Currency",
+        required=True,
+        default=lambda self: self.env.company.currency_id,
+    )
