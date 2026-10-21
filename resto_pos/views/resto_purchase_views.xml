@@ -18,6 +18,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="action_confirm" type="object" string="Confirm"
+                            class="btn-primary" invisible="state != 'draft'"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>

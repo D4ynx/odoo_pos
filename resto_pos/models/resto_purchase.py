@@ -40,3 +40,7 @@ class RestoPurchase(models.Model):
         required=True,
         default="draft",
     )
+
+    def action_confirm(self):
+        for purchase in self:
+            purchase.state = "confirmed"
