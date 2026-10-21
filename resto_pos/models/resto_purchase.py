@@ -43,4 +43,15 @@ class RestoPurchase(models.Model):
 
     def action_confirm(self):
         for purchase in self:
+            for line in purchase.line_ids:
+                self.env["resto.stock.lot"].create(
+                    {
+                        "ingredient_id": line.ingredient_id.id,
+                        "date": purchase.date,
+                        "qty": line.qty,
+                        "remaining_qty": line.qty,
+                        "unit_cost": line.price_unit,
+                        "currency_id": purchase.currency_id.id,
+                    }
+                )
             purchase.state = "confirmed"
