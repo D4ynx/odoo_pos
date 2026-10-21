@@ -30,3 +30,13 @@ class RestoPurchase(models.Model):
         required=True,
         default=lambda self: self.env.company.currency_id,
     )
+
+    state = fields.Selection(
+        [
+            ("draft", "Draft"),
+            ("confirmed", "Confirmed"),
+        ],
+        string="Status",
+        required=True,
+        default="draft",
+    )
