@@ -1,4 +1,5 @@
 from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 from odoo.exceptions import ValidationError
 
 
@@ -42,6 +43,15 @@ class RestoIngredient(models.Model):
 
     def _consume_fifo(self, qty):
         self.ensure_one()
+        if qty > self.qty_on_hand:
+            raise UserError(
+                _(
+                    "Not enough %s in stock: need %s, have %s.",
+                    self.name,
+                    qty,
+                    self.qty_on_hand,
+                )
+            )
         needed = qty
         cost = 0
         for lot in self.lot_ids:

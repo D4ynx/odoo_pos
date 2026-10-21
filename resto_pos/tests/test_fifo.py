@@ -1,3 +1,4 @@
+from odoo.exceptions import UserError
 from odoo.tests import TransactionCase
 
 
@@ -41,3 +42,9 @@ class TestFifo(TransactionCase):
         self.assertEqual(cost, 2 * 100 + 3 * 20)
         self.assertEqual(self.lot_a.remaining_qty, 0)
         self.assertEqual(self.lot_b.remaining_qty, 30)
+
+    def test_not_enough_stock(self):
+        with self.assertRaises(UserError):
+            self.flour._consume_fifo(200)
+        self.assertEqual(self.lot_a.remaining_qty, 100)
+        self.assertEqual(self.lot_b.remaining_qty, 50)
