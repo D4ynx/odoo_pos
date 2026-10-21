@@ -1,6 +1,10 @@
+[lint]
+ignore = ["RUF012"]
+
 [lint.per-file-ignores]
 "__manifest__.py" = ["B018"]
 "__init__.py" = ["F401"]
 
 [lint.isort]
 force-single-line = true
+single-line-exclusions = ["odoo"]

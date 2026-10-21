@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="resto_stock_lot_view_list" model="ir.ui.view">
+        <field name="name">resto.stock.lot.view.list</field>
+        <field name="model">resto.stock.lot</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="date"/>
+                <field name="ingredient_id"/>
+                <field name="qty"/>
+                <field name="remaining_qty"/>
+                <field name="uom_id"/>
+                <field name="unit_cost"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+</odoo>
