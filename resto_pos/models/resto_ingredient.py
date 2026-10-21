@@ -39,3 +39,16 @@ class RestoIngredient(models.Model):
                         ingredient.name,
                     )
                 )
+
+    def _consume_fifo(self, qty):
+        self.ensure_one()
+        needed = qty
+        cost = 0
+        for lot in self.lot_ids:
+            take = min(lot.remaining_qty, needed)
+            lot.remaining_qty -= take
+            cost += take * lot.unit_cost
+            needed -= take
+            if needed == 0:
+                break
+        return cost
