@@ -4,3 +4,5 @@ access_resto_menu_item_user,resto.menu.item.user,model_resto_menu_item,base.grou
 access_resto_recipe_line_user,resto.recipe.line.user,model_resto_recipe_line,base.group_user,1,1,1,1
 access_resto_menu_category_user,resto.menu.category.user,model_resto_menu_category,base.group_user,1,1,1,1
 access_resto_stock_lot_user,resto.stock.lot.user,model_resto_stock_lot,base.group_user,1,1,1,1
+access_resto_purchase_user,resto.purchase.user,model_resto_purchase,base.group_user,1,1,1,1
+access_resto_purchase_line_user,resto.purchase.line.user,model_resto_purchase_line,base.group_user,1,1,1,1
