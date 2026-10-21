@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="resto_purchase_view_list" model="ir.ui.view">
+        <field name="name">resto.purchase.view.list</field>
+        <field name="model">resto.purchase</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="partner_id"/>
+                <field name="date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="resto_purchase_view_form" model="ir.ui.view">
+        <field name="name">resto.purchase.view.form</field>
+        <field name="model">resto.purchase</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="date"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                    <field name="line_ids">
+                        <list editable="bottom">
+                            <field name="ingredient_id"/>
+                            <field name="qty"/>
+                            <field name="uom_id"/>
+                            <field name="currency_id" column_invisible="1"/>
+                            <field name="price_unit"/>
+                            <field name="subtotal"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
