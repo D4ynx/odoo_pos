@@ -1,4 +1,5 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class RestoIngredient(models.Model):
@@ -27,3 +28,14 @@ class RestoIngredient(models.Model):
     def _compute_qty_on_hand(self):
         for ingredient in self:
             ingredient.qty_on_hand = sum(ingredient.lot_ids.mapped("remaining_qty"))
+
+    @api.constrains("uom_id")
+    def _check_uom_locked(self):
+        for ingredient in self:
+            if ingredient.lot_ids:
+                raise ValidationError(
+                    _(
+                        "You cannot change the unit of %s because it already has stock lots. Archive it and create a new ingredient instead.",
+                        ingredient.name,
+                    )
+                )
