@@ -45,7 +45,7 @@ git clone git@github.com:D4ynx/odoo_pos.git custom_addons
 - [x] **M0** Repo setup, tooling, README
 - [x] **M1** Ingredients with units of measure
 - [x] **M2** Menu items and recipes
-- [ ] **M3** Purchases, stock lots, FIFO (with tests)
+- [x] **M3** Purchases, stock lots, FIFO (with tests)
 - [ ] **M4** Tables, orders, kitchen workflow, COGS at payment
 - [ ] **M5** Security: Waiter / Kitchen / Manager roles
 - [ ] **M6** Customers on orders (extending `res.partner`)
