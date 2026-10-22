@@ -1,4 +1,4 @@
-from odoo import _, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
 
@@ -49,6 +49,13 @@ class RestoOrder(models.Model):
         required=True,
         default="draft",
     )
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        orders = super().create(vals_list)
+        for order in orders:
+            order.table_id.state = "occupied"
+        return orders
 
     def action_send_to_kitchen(self):
         for order in self:
