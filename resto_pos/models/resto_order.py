@@ -54,6 +54,10 @@ class RestoOrder(models.Model):
     def create(self, vals_list):
         orders = super().create(vals_list)
         for order in orders:
+            if order.table_id.state == "occupied":
+                raise UserError(
+                    _("Table %s already has an open order.", order.table_id.name)
+                )
             order.table_id.state = "occupied"
         return orders
 
