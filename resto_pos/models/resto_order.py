@@ -34,7 +34,7 @@ class RestoOrder(models.Model):
     state = fields.Selection(
         [
             ("draft", "Draft"),
-            ("inKitchen", "In Kitchen"),
+            ("kitchen", "In Kitchen"),
             ("served", "Served"),
             ("paid", "Paid"),
         ],

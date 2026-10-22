@@ -7,3 +7,4 @@ access_resto_stock_lot_user,resto.stock.lot.user,model_resto_stock_lot,base.grou
 access_resto_purchase_user,resto.purchase.user,model_resto_purchase,base.group_user,1,1,1,1
 access_resto_purchase_line_user,resto.purchase.line.user,model_resto_purchase_line,base.group_user,1,1,1,1
 access_resto_table_user,resto.table.user,model_resto_table,base.group_user,1,1,1,1
+access_resto_order_user,resto.order.user,model_resto_order,base.group_user,1,1,1,1
