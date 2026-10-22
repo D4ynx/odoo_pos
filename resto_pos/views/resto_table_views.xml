@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="resto_table_view_list" model="ir.ui.view">
+        <field name="name">resto.table.view.list</field>
+        <field name="model">resto.table</field>
+        <field name="arch" type="xml">
+            <list decoration-warning="state == 'occupied'">
+                <field name = "name"/>
+                <field name = "seats"/>
+                <field name = "state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="resto_table_view_form" model="ir.ui.view">
+        <field name="name">resto.table.view.form</field>
+        <field name="model">resto.table</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="seats"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
