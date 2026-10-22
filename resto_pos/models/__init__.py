@@ -5,3 +5,4 @@ from . import resto_purchase
 from . import resto_purchase_line
 from . import resto_recipe_line
 from . import resto_stock_lot
+from . import resto_table
