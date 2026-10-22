@@ -18,6 +18,12 @@ class RestoOrder(models.Model):
         required=True,
     )
 
+    line_ids = fields.One2many(
+        "resto.order.line",
+        "order_id",
+        string="Order Lines",
+    )
+
     user_id = fields.Many2one(
         "res.users",
         string="Waiter",
