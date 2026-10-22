@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import _, fields, models
+from odoo.exceptions import UserError
 
 
 class RestoOrder(models.Model):
@@ -48,3 +49,15 @@ class RestoOrder(models.Model):
         required=True,
         default="draft",
     )
+
+    def action_send_to_kitchen(self):
+        for order in self:
+            if order.state != "draft":
+                raise UserError(_("Only draft orders can be sent to the kitchen."))
+            order.state = "kitchen"
+
+    def action_serve(self):
+        for order in self:
+            if order.state != "kitchen":
+                raise UserError(_("Only orders in kitchen can be served"))
+            order.state = "served"
