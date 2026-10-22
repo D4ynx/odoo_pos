@@ -13,6 +13,7 @@
         "views/resto_stock_lot_views.xml",
         "views/resto_purchase_views.xml",
         "views/resto_table_views.xml",
+        "views/resto_order_views.xml",
         "views/resto_menus.xml",
     ],
     "application": True,

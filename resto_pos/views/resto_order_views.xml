@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="resto_order_view_list" model="ir.ui.view">
+        <field name="name">resto.order.view.list</field>
+        <field name="model">resto.order</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="table_id"/>
+                <field name="user_id"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="resto_order_view_form" model="ir.ui.view">
+        <field name="name">resto.order.view.form</field>
+        <field name="model">resto.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="table_id"/>
+                        <field name="user_id"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                    <field name ="line_ids">
+                        <list editable="bottom">
+                            <field name="menu_item_id"/>
+                            <field name="qty"/>
+                            <field name="currency_id" column_invisible="1"/>
+                            <field name="price_unit"/>
+                            <field name="subtotal"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
