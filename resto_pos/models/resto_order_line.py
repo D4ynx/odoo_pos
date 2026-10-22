@@ -35,6 +35,11 @@ class RestoOrderLine(models.Model):
         compute="_compute_subtotal",
     )
 
+    @api.onchange("menu_item_id")
+    def _onchange_menu_item_id(self):
+        for line in self:
+            line.price_unit = line.menu_item_id.price
+
     @api.depends("qty", "price_unit")
     def _compute_subtotal(self):
         for line in self:
